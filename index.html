@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pusat Oleh-Oleh Bu Sepuh — Oleh-Oleh Khas Kuningan</title>
+<meta name="description" content="Pusat Oleh-Oleh Bu Sepuh — toko oleh-oleh khas Kuningan terlengkap. Tape ember, opak ketan bakar, kue satu, dan lainnya. Buka setiap hari 07.00–21.00, Jl. Raya Bojong No. 144–146, Cilimus, Kuningan.">
+<style>
+  :root{
+    --madu:#F5A623;
+    --madu-tua:#D9820B;
+    --coklat:#4A2E17;
+    --coklat-muda:#8A6A4B;
+    --krem:#FFF8ED;
+    --putih:#FFFFFF;
+    --teks:#2B2118;
+    --abu:#6E6259;
+    --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    color:var(--teks);background:var(--krem);line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%}
+  a{text-decoration:none}
+  .wrap{max-width:640px;margin:0 auto;background:var(--putih);box-shadow:0 0 24px rgba(74,46,23,.08)}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(135deg,var(--coklat) 0%,#5d3d22 100%);
+    color:var(--putih);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 18px;
+  }
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{
+    width:38px;height:38px;border-radius:12px;flex:0 0 38px;
+    background:linear-gradient(135deg,var(--madu) 0%,var(--madu-tua) 100%);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:20px;color:var(--coklat);
+  }
+  .logo b{font-size:16px;letter-spacing:.2px;display:block;line-height:1.2}
+  .logo small{font-size:11px;color:#E8D9C2}
+  .call-top{
+    background:linear-gradient(135deg,var(--madu),var(--madu-tua));
+    color:var(--coklat);font-weight:700;font-size:14px;
+    padding:10px 16px;border-radius:999px;
+    display:flex;align-items:center;gap:6px;white-space:nowrap;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(1200px 300px at 50% -80px,rgba(245,166,35,.35),transparent 70%),
+      linear-gradient(180deg,var(--coklat) 0%,#5d3d22 60%,#3a2412 100%);
+    color:var(--putih);text-align:center;padding:52px 22px 40px;
+  }
+  .hero .badge{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;
+    background:rgba(245,166,35,.18);color:var(--madu);
+    border:1px solid rgba(245,166,35,.5);
+    padding:6px 14px;border-radius:999px;margin-bottom:16px;text-transform:uppercase;
+  }
+  .hero h1{font-size:30px;line-height:1.25;margin-bottom:10px;font-weight:800}
+  .hero h1 .gold{
+    background:linear-gradient(120deg,#FFD98A,var(--madu));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.tagline{color:#E8D9C2;font-size:16px;margin-bottom:8px}
+  .hero p.alamat-kecil{color:#C9B48F;font-size:13px;margin-bottom:22px}
+  .rating{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+    padding:8px 16px;border-radius:999px;font-size:14px;margin-bottom:24px;
+  }
+  .rating .stars{color:var(--madu);letter-spacing:2px;font-size:16px}
+  .rating small{color:#C9B48F;font-size:12px}
+  .cta-big{
+    display:block;background:linear-gradient(135deg,var(--madu),var(--madu-tua));
+    color:var(--coklat);font-weight:800;font-size:18px;
+    padding:16px 24px;border-radius:14px;margin:0 auto;max-width:340px;
+    box-shadow:0 8px 24px rgba(245,166,35,.35);
+  }
+  .cta-big small{display:block;font-weight:600;font-size:13px;margin-top:2px}
+  .hero .note{font-size:12px;color:#C9B48F;margin-top:14px}
+
+  /* ---------- info bar ---------- */
+  .infobar{
+    display:flex;gap:10px;padding:16px;
+    background:var(--putih);
+  }
+  .infobar .chip{
+    flex:1;background:var(--krem);border:1px solid #F0E2CB;border-radius:12px;
+    padding:10px 6px;text-align:center;font-size:12px;color:var(--abu);
+  }
+  .infobar .chip b{display:block;color:var(--teks);font-size:14px;margin-top:2px}
+  .infobar .chip .ico{font-size:18px;display:block}
+
+  /* ---------- sections ---------- */
+  section{padding:34px 20px}
+  section h2{font-size:22px;font-weight:800;margin-bottom:6px;color:var(--coklat)}
+  section .sub{font-size:14px;color:var(--abu);margin-bottom:20px}
+
+  /* ---------- katalog ---------- */
+  .katalog{background:var(--krem)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .card{
+    background:var(--putih);border-radius:var(--radius);overflow:hidden;
+    border:1px solid #F0E2CB;display:flex;flex-direction:column;
+  }
+  .card .foto{
+    height:110px;display:flex;align-items:center;justify-content:center;
+    font-size:44px;background:linear-gradient(135deg,#FDE9C8 0%,#F7C86B 100%);
+  }
+  .card:nth-child(3n+2) .foto{background:linear-gradient(135deg,#EAD9C2 0%,#C79B6B 100%)}
+  .card:nth-child(3n) .foto{background:linear-gradient(135deg,#FFF3DC 0%,#F0A83E 100%)}
+  .card .isi{padding:12px 12px 14px;display:flex;flex-direction:column;flex:1}
+  .card .isi b{font-size:14px;line-height:1.35;margin-bottom:2px}
+  .card .isi .varian{font-size:11px;color:var(--abu);margin-bottom:8px}
+  .card .harga{margin-top:auto;font-weight:800;color:var(--madu-tua);font-size:15px}
+  .card .harga.tanya{color:var(--coklat-muda);font-size:12.5px;font-weight:600}
+  .catat{margin-top:16px;font-size:12px;color:var(--abu);text-align:center}
+  .catat b{color:var(--coklat)}
+
+  /* ---------- tentang ---------- */
+  .tentang p{font-size:15px;color:#453b30;margin-bottom:12px}
+  .poin{display:flex;gap:10px;align-items:flex-start;margin:12px 0;font-size:14px}
+  .poin .cek{
+    flex:0 0 26px;width:26px;height:26px;border-radius:50%;
+    background:linear-gradient(135deg,var(--madu),var(--madu-tua));
+    color:var(--coklat);font-weight:800;display:flex;align-items:center;justify-content:center;
+    font-size:14px;
+  }
+
+  /* ---------- info praktis ---------- */
+  .info-praktis{background:linear-gradient(180deg,var(--coklat),#3a2412);color:var(--putih)}
+  .info-praktis h2{color:var(--madu)}
+  .info-praktis .sub{color:#C9B48F}
+  .rows{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+  .row{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px}
+  .row .ico{font-size:22px;line-height:1.2}
+  .row b{display:block;font-size:14px;margin-bottom:2px;color:var(--madu)}
+  .row span{font-size:14px;color:#EDE0CB}
+  .row a{color:#FFD98A;font-weight:700}
+  .btn-outline{
+    display:block;text-align:center;border:2px solid var(--madu);color:var(--madu);
+    font-weight:700;font-size:15px;padding:14px;border-radius:14px;margin-bottom:12px;
+  }
+
+  /* ---------- footer ---------- */
+  footer{background:#241709;color:#8a7a66;font-size:12px;text-align:center;padding:22px 18px}
+  footer a{color:#C9A86B}
+
+  /* ---------- sticky call (mobile) ---------- */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(36,23,9,.96);backdrop-filter:blur(6px);
+    display:flex;align-items:center;gap:12px;
+  }
+  .sticky-call .t{flex:1;color:#EDE0CB;font-size:12px;line-height:1.4}
+  .sticky-call .t b{display:block;font-size:14px;color:var(--madu)}
+  .sticky-call .go{
+    background:linear-gradient(135deg,var(--madu),var(--madu-tua));color:var(--coklat);
+    font-weight:800;font-size:15px;padding:13px 22px;border-radius:12px;white-space:nowrap;
+  }
+  body{padding-bottom:76px}
+  @media(min-width:640px){
+    .grid{grid-template-columns:1fr 1fr 1fr}
+    .hero h1{font-size:38px}
+    .sticky-call{display:none}
+    body{padding-bottom:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo">
+      <div class="logo-mark">BS</div>
+      <div>
+        <b>Bu Sepuh</b>
+        <small>Oleh-Oleh Khas Kuningan</small>
+      </div>
+    </div>
+    <a class="call-top" href="tel:+62232614228">&#9742; Telepon</a>
+  </header>
+
+  <div class="hero">
+    <span class="badge">Pusat Oleh-Oleh Kuningan</span>
+    <h1>Pusat Oleh-Oleh <span class="gold">Bu Sepuh</span></h1>
+    <p class="tagline">Oleh-oleh khas Kuningan — dari tape legendaris sampai jajanan pasar.</p>
+    <p class="alamat-kecil">Jl. Raya Bojong No. 144–146, Cilimus, Kab. Kuningan</p>
+    <div class="rating">
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+      <span><b>4,5</b> dari 52 ulasan</span>
+      <small>sumber: Google Maps</small>
+    </div>
+    <a class="cta-big" href="tel:+62232614228">
+      &#9742; Telepon Sekarang
+      <small>(0232) 614228</small>
+    </a>
+    <p class="note">Buka setiap hari 07.00–21.00 WIB</p>
+  </div>
+
+  <div class="infobar">
+    <div class="chip"><span class="ico">&#9200;</span>Jam buka<b>07.00–21.00</b></div>
+    <div class="chip"><span class="ico">&#9733;</span>Rating<b>4,5 / 5,0</b></div>
+    <div class="chip"><span class="ico">&#128205;</span>Lokasi<b>Cilimus, Kuningan</b></div>
+  </div>
+
+  <section class="katalog" id="katalog">
+    <h2>Katalog Oleh-Oleh</h2>
+    <p class="sub">Harga transparan. Tanya ketersediaan langsung lewat telepon.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="foto">&#127817;</div>
+        <div class="isi">
+          <b>Tape Ember Sari Wangi</b>
+          <div class="varian">Tape singkong fermentasi manis, ember</div>
+          <div class="harga">Rp80.000 – Rp95.000</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="foto">&#127817;</div>
+        <div class="isi">
+          <b>Tape Ember Sari Asri</b>
+          <div class="varian">Tape singkong fermentasi, ember</div>
+          <div class="harga">Rp80.000 – Rp95.000</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="foto">&#127817;</div>
+        <div class="isi">
+          <b>Tape Ember Rasa Madu</b>
+          <div class="varian">Tape singkong fermentasi rasa madu, ember</div>
+          <div class="harga">Rp80.000 – Rp95.000</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="foto">&#127856;</div>
+        <div class="isi">
+          <b>Peuyeum / Tape Ketan</b>
+          <div class="varian">Tape ketan hitam &amp; putih</div>
+          <div class="harga tanya">Tanya via telepon</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="foto">&#127839;</div>
+        <div class="isi">
+          <b>Opak Ketan Bakar</b>
+          <div class="varian">Renyah, gurih, oleh-oleh klasik</div>
+          <div class="harga tanya">Tanya via telepon</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="foto">&#127852;</div>
+        <div class="isi">
+          <b>Keripik Tempe &amp; Singkong</b>
+          <div class="varian">Aneka rasa, kemasan praktis</div>
+          <div class="harga tanya">Tanya via telepon</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="foto">&#127848;</div>
+        <div class="isi">
+          <b>Kue Satu</b>
+          <div class="varian">Kue kacang hijau khas</div>
+          <div class="harga tanya">Tanya via telepon</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="foto">&#129473;</div>
+        <div class="isi">
+          <b>Tahu Susu</b>
+          <div class="varian">Tahu susu lembut khas Kuningan</div>
+          <div class="harga tanya">Tanya via telepon</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="foto">&#127849;</div>
+        <div class="isi">
+          <b>Dodol</b>
+          <div class="varian">Manis legit, cocok buah tangan</div>
+          <div class="harga tanya">Tanya via telepon</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="foto">&#127823;</div>
+        <div class="isi">
+          <b>Bumbu Rujak</b>
+          <div class="varian">Pelengkap oleh-oleh buah</div>
+          <div class="harga tanya">Tanya via telepon</div>
+        </div>
+      </div>
+
+    </div>
+    <p class="catat">Harga di atas dari sumber publik. Untuk varian lain, <b>telepon (0232) 614228</b>.</p>
+  </section>
+
+  <section class="tentang" id="tentang">
+    <h2>Tentang Bu Sepuh</h2>
+    <p class="sub">Kenapa mampir ke sini</p>
+    <p>Toko oleh-oleh khas Kuningan yang dikenal sebagai salah satu yang terbesar dan terlengkap di kawasan Cilimus — jalur utama wisatawan yang pulang dari arah Cirebon–Kuningan.</p>
+    <div class="poin"><span class="cek">&#10003;</span><span><b>Stok lengkap</b> — tape, opak, keripik, kue kering, sampai bumbu rujak dalam satu tempat.</span></div>
+    <div class="poin"><span class="cek">&#10003;</span><span><b>Lokasi strategis</b> — di jalan raya utama Cilimus, mudah dijangkau dan parkir lapang.</span></div>
+    <div class="poin"><span class="cek">&#10003;</span><span><b>Jam panjang</b> — buka setiap hari 07.00–21.00, nyaman untuk rombongan malam hari.</span></div>
+  </section>
+
+  <section class="info-praktis" id="info">
+    <h2>Info Praktis</h2>
+    <p class="sub">Semua yang perlu diketahui sebelum datang</p>
+    <div class="rows">
+      <div class="row">
+        <span class="ico">&#128205;</span>
+        <div><b>Alamat</b><span>Jl. Raya Bojong No. 144–146, Cilimus, Kab. Kuningan, Jawa Barat</span></div>
+      </div>
+      <div class="row">
+        <span class="ico">&#9200;</span>
+        <div><b>Jam buka</b><span>Setiap hari, 07.00–21.00 WIB</span></div>
+      </div>
+      <div class="row">
+        <span class="ico">&#9742;</span>
+        <div><b>Telepon</b><span><a href="tel:+62232614228">(0232) 614228</a></span></div>
+      </div>
+    </div>
+    <a class="btn-outline" href="https://www.google.com/maps/search/?api=1&query=Pusat+Oleh-Oleh+Bu+Sepuh+Cilimus+Kuningan" target="_blank" rel="noopener">
+      &#128205; Lihat di Google Maps
+    </a>
+    <a class="cta-big" href="tel:+62232614228">
+      &#9742; Telepon Sekarang
+      <small>(0232) 614228 — tanya stok &amp; harga</small>
+    </a>
+  </section>
+
+  <footer>
+    <p>Contoh website dibuat oleh <b>Zenn</b> — web designer Kuningan.</p>
+    <p style="margin-top:6px">Data alamat, jam, harga tape &amp; rating dari sumber publik (Google Maps). Harga varian lain &amp; stok: konfirmasi via telepon.</p>
+  </footer>
+
+</div>
+
+<div class="sticky-call">
+  <div class="t"><b>(0232) 614228</b>Buka hari ini 07.00–21.00</div>
+  <a class="go" href="tel:+62232614228">&#9742; Telepon</a>
+</div>
+
+</body>
+</html>
